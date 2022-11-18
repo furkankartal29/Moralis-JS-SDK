@@ -1,0 +1,29 @@
+{
+  "name": "@moralisweb3/express",
+  "author": "Moralis",
+  "version": "2.7.4",
+  "license": "MIT",
+  "private": false,
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "lib/*"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts,.tsx,jsx",
+    "format": "prettier --write 'src/**/*.{js,ts}'",
+    "clean": "rm -rf lib && rm -rf tsconfig.tsbuildinfo && rm -rf ./node_modules/.cache/nx",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "moralis": "^2.7.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "peerDependencies": {
+    "moralis": ">=2.7.4"
+  }
+}
