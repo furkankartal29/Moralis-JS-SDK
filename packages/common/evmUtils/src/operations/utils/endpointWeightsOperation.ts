@@ -10,7 +10,7 @@ type SuccessResponse = operations[OperationId]['responses']['200']['content']['a
 
 export interface EndpointWeightsRequest {}
 
-export type EndpointWeightsJSONRequest = undefined;
+export type EndpointWeightsJSONRequest = ReturnType<typeof serializeRequest>;
 
 export type EndpointWeightsJSONResponse = SuccessResponse;
 
