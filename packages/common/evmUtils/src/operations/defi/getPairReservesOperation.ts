@@ -25,13 +25,10 @@ export type GetPairReservesJSONResponse = SuccessResponse;
 
 export type GetPairReservesResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get the liquidity reserves for a given pair address. Only Uniswap V2 based exchanges supported at the moment. */
-=======
 export interface GetPairReservesResponseAdapter
   extends ResponseAdapter<GetPairReservesResponse, GetPairReservesJSONResponse> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get the liquidity reserves for a given pair address. Only Uniswap V2 based exchanges supported at the moment. */
 export const getPairReservesOperation: Operation<
   GetPairReservesRequest,
   GetPairReservesJSONRequest,

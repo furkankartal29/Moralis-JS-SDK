@@ -24,13 +24,10 @@ export type GetDateToBlockJSONResponse = SuccessResponse;
 
 export type GetDateToBlockResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get the closest block given the date. */
-=======
 export interface GetDateToBlockResponseAdapter
   extends ResponseAdapter<GetDateToBlockResponse, GetDateToBlockJSONResponse> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get the closest block given the date. */
 export const getDateToBlockOperation: Operation<
   GetDateToBlockRequest,
   GetDateToBlockJSONRequest,

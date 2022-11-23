@@ -24,13 +24,10 @@ export type GetNFTLowestPriceJSONResponse = SuccessResponse;
 
 export type GetNFTLowestPriceResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get the lowest executed price for an NFT contract for the last x days (only trades paid in ETH). */
-=======
 export interface GetNFTLowestPriceResponseAdapter
   extends ResponseAdapter<GetNFTLowestPriceResponse, GetNFTLowestPriceJSONResponse> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get the lowest executed price for an NFT contract for the last x days (only trades paid in ETH). */
 export const getNFTLowestPriceOperation: Operation<
   GetNFTLowestPriceRequest,
   GetNFTLowestPriceJSONRequest,
@@ -57,7 +54,7 @@ export const getNFTLowestPriceOperation: Operation<
 function getRequestUrlParams(request: GetNFTLowestPriceRequest, core: Core) {
   return {
     chain: EvmChainResolver.resolve(request.chain, core).apiHex,
-    address: EvmAddress.create(request.address, core).checksum,
+    address: EvmAddress.create(request.address, core).lowercase,
     days: maybe(request.days, String),
     provider_url: request.providerUrl,
     marketplace: request.marketplace,

@@ -30,18 +30,14 @@ export type GetContractNFTsJSONRequest = ReturnType<typeof serializeRequest>;
 export type GetContractNFTsJSONResponse = SuccessResponse;
 
 export type GetContractNFTsResponse = ReturnType<typeof deserializeResponse>;
+export interface GetContractNFTsResponseAdapter
+  extends PaginatedResponseAdapter<GetContractNFTsResponse, GetContractNFTsJSONResponse['result']> {}
 
-<<<<<<< HEAD
 /**
  * Get NFTs for a given contract address, including metadata for all NFTs (where available).
  * * Results are limited to 100 per page by default
  * * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection.
  */
-=======
-export interface GetContractNFTsResponseAdapter
-  extends PaginatedResponseAdapter<GetContractNFTsResponse, GetContractNFTsJSONResponse['result']> {}
-
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
 export const getContractNFTsOperation: PaginatedOperation<
   GetContractNFTsRequest,
   GetContractNFTsJSONRequest,

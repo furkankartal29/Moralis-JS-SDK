@@ -27,16 +27,13 @@ export type GetPairAddressJSONResponse = SuccessResponse;
 
 export type GetPairAddressResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/**
- * Fetch the pair data of the provided token0+token1 combination.
- * The token0 and token1 options are interchangable (ie. there is no different outcome in "token0=WETH and token1=USDT" or "token0=USDT and token1=WETH")
- */
-=======
 export interface GetPairAddressResponseAdapter
   extends ResponseAdapter<GetPairAddressResponse, GetPairAddressJSONResponse> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+  /**
+ * Fetch the pair data of the provided token0+token1 combination.
+ * The token0 and token1 options are interchangable (ie. there is no different outcome in "token0=WETH and token1=USDT" or "token0=USDT and token1=WETH")
+ */
 export const getPairAddressOperation: Operation<
   GetPairAddressRequest,
   GetPairAddressJSONRequest,

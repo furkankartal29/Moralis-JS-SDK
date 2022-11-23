@@ -31,16 +31,13 @@ export type GetNFTOwnersJSONResponse = SuccessResponse;
 
 export type GetNFTOwnersResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
+export interface GetNFTOwnersResponseAdapter
+  extends PaginatedResponseAdapter<GetNFTOwnersResponse, GetNFTOwnersJSONResponse['result']> {}
+
 /**
  * Get owners of NFTs for a given contract.
  * * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection.
  */
-=======
-export interface GetNFTOwnersResponseAdapter
-  extends PaginatedResponseAdapter<GetNFTOwnersResponse, GetNFTOwnersJSONResponse['result']> {}
-
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
 export const getNFTOwnersOperation: PaginatedOperation<
   GetNFTOwnersRequest,
   GetNFTOwnersJSONRequest,
@@ -67,7 +64,7 @@ export const getNFTOwnersOperation: PaginatedOperation<
 function getRequestUrlParams(request: GetNFTOwnersRequest, core: Core) {
   return {
     chain: EvmChainResolver.resolve(request.chain, core).apiHex,
-    address: EvmAddress.create(request.address, core).checksum,
+    address: EvmAddress.create(request.address, core).lowercase,
     format: request.format,
     limit: maybe(request.limit, String),
     cursor: request.cursor,

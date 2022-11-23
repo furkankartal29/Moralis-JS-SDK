@@ -31,13 +31,10 @@ export type GetWalletNFTCollectionsJSONResponse = SuccessResponse;
 
 export type GetWalletNFTCollectionsResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get NFT collections owned by a given wallet address. */
-=======
 export interface GetWalletNFTCollectionsResponseAdapter
   extends PaginatedResponseAdapter<GetWalletNFTCollectionsResponse, GetWalletNFTCollectionsJSONResponse['result']> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get NFT collections owned by a given wallet address. */
 export const getWalletNFTCollectionsOperation: PaginatedOperation<
   GetWalletNFTCollectionsRequest,
   GetWalletNFTCollectionsJSONRequest,

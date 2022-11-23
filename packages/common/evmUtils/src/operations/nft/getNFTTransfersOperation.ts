@@ -31,13 +31,10 @@ export type GetNFTTransfersJSONResponse = SuccessResponse;
 
 export type GetNFTTransfersResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get transfers of an NFT given a contract address and token ID. */
-=======
 export interface GetNFTTransfersResponseAdapter
   extends PaginatedResponseAdapter<GetNFTTransfersResponse, GetNFTTransfersJSONResponse['result']> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get transfers of an NFT given a contract address and token ID. */
 export const getNFTTransfersOperation: PaginatedOperation<
   GetNFTTransfersRequest,
   GetNFTTransfersJSONRequest,
@@ -48,7 +45,7 @@ export const getNFTTransfersOperation: PaginatedOperation<
   name: 'getNFTTransfers',
   id: 'getNFTTransfers',
   groupName: 'nft',
-  urlPathPattern: '/nft/{address}/{token_id}/transfers',
+  urlPathPattern: '/nft/{address}/{tokenId}/transfers',
   urlPathParamNames: ['address', 'tokenId'],
   urlSearchParamNames: ['chain', 'format', 'limit', 'cursor'],
   firstPageIndex: 0,

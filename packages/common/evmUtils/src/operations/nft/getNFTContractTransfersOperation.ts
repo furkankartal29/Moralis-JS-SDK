@@ -31,13 +31,10 @@ export type GetNFTContractTransfersJSONResponse = SuccessResponse;
 
 export type GetNFTContractTransfersResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get transfers of NFTs for a given contract and other parameters. */
-=======
 export interface GetNFTContractTransfersResponseAdapter
   extends PaginatedResponseAdapter<GetNFTContractTransfersResponse, GetNFTContractTransfersJSONResponse['result']> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get transfers of NFTs for a given contract and other parameters. */
 export const getNFTContractTransfersOperation: PaginatedOperation<
   GetNFTContractTransfersRequest,
   GetNFTContractTransfersJSONRequest,

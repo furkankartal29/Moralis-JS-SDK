@@ -24,13 +24,10 @@ export type GetNativeBalanceJSONResponse = SuccessResponse;
 
 export type GetNativeBalanceResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get the native balance for a specific wallet address. */
-=======
 export interface GetNativeBalanceResponseAdapter
   extends ResponseAdapter<GetNativeBalanceResponse, GetNativeBalanceJSONResponse> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get the native balance for a specific wallet address. */
 export const getNativeBalanceOperation: Operation<
   GetNativeBalanceRequest,
   GetNativeBalanceJSONRequest,

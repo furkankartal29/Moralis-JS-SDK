@@ -23,17 +23,13 @@ export type GetNFTContractMetadataJSONRequest = ReturnType<typeof serializeReque
 export type GetNFTContractMetadataJSONResponse = SuccessResponse;
 
 export type GetNFTContractMetadataResponse = ReturnType<typeof deserializeResponse>;
+export interface GetNFTContractMetadataResponseAdapter
+  extends ResponseAdapter<GetNFTContractMetadataResponse, GetNFTContractMetadataJSONResponse> {}
 
-<<<<<<< HEAD
 /**
  * Get the collection / contract level metadata for a given contract (name, symbol, base token uri).
  * * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
  */
-=======
-export interface GetNFTContractMetadataResponseAdapter
-  extends ResponseAdapter<GetNFTContractMetadataResponse, GetNFTContractMetadataJSONResponse> {}
-
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
 export const getNFTContractMetadataOperation: Operation<
   GetNFTContractMetadataRequest,
   GetNFTContractMetadataJSONRequest,

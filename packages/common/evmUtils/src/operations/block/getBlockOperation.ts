@@ -23,12 +23,9 @@ export type GetBlockJSONResponse = SuccessResponse;
 
 export type GetBlockResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get the contents of a block given the block hash. */
-=======
 export interface GetBlockResponseAdapter extends ResponseAdapter<GetBlockResponse, GetBlockJSONResponse> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get the contents of a block given the block hash. */
 export const getBlockOperation: Operation<
   GetBlockRequest,
   GetBlockJSONRequest,

@@ -35,13 +35,10 @@ export type GetContractEventsJSONResponse = SuccessResponse;
 
 export type GetContractEventsResponse = ReturnType<typeof deserializeResponse>;
 
-<<<<<<< HEAD
-/** Get events for a contract ordered by block number in descending order. */
-=======
 export interface GetContractEventsResponseAdapter
   extends PaginatedResponseAdapter<GetContractEventsResponse, GetContractEventsJSONResponse['result']> {}
 
->>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
+/** Get events for a contract ordered by block number in descending order. */
 export const getContractEventsOperation: PaginatedOperation<
   GetContractEventsRequest,
   GetContractEventsJSONRequest,
