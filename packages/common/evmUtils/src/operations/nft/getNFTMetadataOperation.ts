@@ -1,4 +1,4 @@
-import { Core, Camelize, Operation, toCamelCase } from '@moralisweb3/common-core';
+import { Core, Camelize, Operation, toCamelCase, ResponseAdapter } from '@moralisweb3/common-core';
 import { EvmChain, EvmChainish, EvmAddress, EvmAddressish, EvmNft } from '../../dataTypes';
 import { EvmChainResolver } from '../../EvmChainResolver';
 import { operations } from '../openapi';
@@ -24,10 +24,16 @@ export type GetNFTMetadataJSONResponse = SuccessResponse;
 
 export type GetNFTMetadataResponse = ReturnType<typeof deserializeResponse>;
 
+<<<<<<< HEAD
 /**
  * Get NFT data, including metadata (where available), for the given NFT token ID and contract address.
  * * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
  */
+=======
+export interface GetNFTMetadataResponseAdapter
+  extends ResponseAdapter<GetNFTMetadataResponse, GetNFTMetadataJSONResponse> {}
+
+>>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
 export const getNFTMetadataOperation: Operation<
   GetNFTMetadataRequest,
   GetNFTMetadataJSONRequest,

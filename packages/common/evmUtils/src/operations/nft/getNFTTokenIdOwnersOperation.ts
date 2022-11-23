@@ -1,4 +1,11 @@
-import { Core, Camelize, PaginatedOperation, toCamelCase, maybe } from '@moralisweb3/common-core';
+import {
+  Core,
+  Camelize,
+  PaginatedOperation,
+  toCamelCase,
+  maybe,
+  PaginatedResponseAdapter,
+} from '@moralisweb3/common-core';
 import { EvmChain, EvmChainish, EvmAddress, EvmAddressish, EvmNft } from '../../dataTypes';
 import { EvmChainResolver } from '../../EvmChainResolver';
 import { operations } from '../openapi';
@@ -24,10 +31,9 @@ export type GetNFTTokenIdOwnersJSONResponse = SuccessResponse;
 
 export type GetNFTTokenIdOwnersResponse = ReturnType<typeof deserializeResponse>;
 
-/**
- * Get owners of a specific NFT given the contract address and token ID.
- * * Requests for contract addresses not yet indexed will automatically start the indexing process for that NFT collection
- */
+export interface GetNFTTokenIdOwnersResponseAdapter
+  extends PaginatedResponseAdapter<GetNFTTokenIdOwnersResponse, GetNFTTokenIdOwnersJSONResponse['result']> {}
+
 export const getNFTTokenIdOwnersOperation: PaginatedOperation<
   GetNFTTokenIdOwnersRequest,
   GetNFTTokenIdOwnersJSONRequest,

@@ -1,4 +1,4 @@
-import { Core, Camelize, Operation, maybe } from '@moralisweb3/common-core';
+import { Core, Camelize, Operation, maybe, ResponseAdapter } from '@moralisweb3/common-core';
 import { EvmChain, EvmChainish, EvmAddress, EvmAddressish, EvmNative } from '../../dataTypes';
 import { EvmChainResolver } from '../../EvmChainResolver';
 import { operations } from '../openapi';
@@ -24,7 +24,13 @@ export type GetNativeBalanceJSONResponse = SuccessResponse;
 
 export type GetNativeBalanceResponse = ReturnType<typeof deserializeResponse>;
 
+<<<<<<< HEAD
 /** Get the native balance for a specific wallet address. */
+=======
+export interface GetNativeBalanceResponseAdapter
+  extends ResponseAdapter<GetNativeBalanceResponse, GetNativeBalanceJSONResponse> {}
+
+>>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
 export const getNativeBalanceOperation: Operation<
   GetNativeBalanceRequest,
   GetNativeBalanceJSONRequest,

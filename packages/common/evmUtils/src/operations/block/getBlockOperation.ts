@@ -1,4 +1,4 @@
-import { Core, Camelize, Operation, toCamelCase } from '@moralisweb3/common-core';
+import { Core, Camelize, Operation, toCamelCase, ResponseAdapter } from '@moralisweb3/common-core';
 import { EvmBlock, EvmChain, EvmChainish, EvmTransaction, EvmTransactionLog, LogTopic } from '../../dataTypes';
 import { EvmChainResolver } from '../../EvmChainResolver';
 import { operations } from '../openapi';
@@ -23,7 +23,12 @@ export type GetBlockJSONResponse = SuccessResponse;
 
 export type GetBlockResponse = ReturnType<typeof deserializeResponse>;
 
+<<<<<<< HEAD
 /** Get the contents of a block given the block hash. */
+=======
+export interface GetBlockResponseAdapter extends ResponseAdapter<GetBlockResponse, GetBlockJSONResponse> {}
+
+>>>>>>> 1201d180ea476c6b85fb8335f8417667fe62d28e
 export const getBlockOperation: Operation<
   GetBlockRequest,
   GetBlockJSONRequest,
