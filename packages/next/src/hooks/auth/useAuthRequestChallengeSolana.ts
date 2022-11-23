@@ -4,11 +4,16 @@ import {
   RequestChallengeSolanaResponse,
 } from '@moralisweb3/auth';
 import { fetcher } from '../../utils/fetcher';
-import { SWRConfiguration } from 'swr/dist/types';
+import { FetchParams } from '../types';
 import { useCallback } from 'react';
 import useSWR from 'swr';
 
-export const useAuthRequestChallengeSolana = (request: RequestChallengeSolanaRequest, SWRConfig?: SWRConfiguration) => {
+export type RequestChallengeSolanaRequestClient = Pick<RequestChallengeSolanaRequest, 'address' | 'network'>;
+
+export const useAuthRequestChallengeSolana = (
+  request: RequestChallengeSolanaRequestClient,
+  fetchParams?: FetchParams,
+) => {
   const endpoint = 'auth/requestChallengeSolana';
 
   const { data, error, isValidating, mutate } = useSWR<RequestChallengeSolanaResponse>(
@@ -17,11 +22,11 @@ export const useAuthRequestChallengeSolana = (request: RequestChallengeSolanaReq
     {
       revalidateOnMount: request ? true : false,
       revalidateOnFocus: false,
-      ...SWRConfig,
+      ...fetchParams,
     },
   );
 
-  const requestChallengeAsync = useCallback((params: RequestChallengeSolanaRequest) => {
+  const requestChallengeAsync = useCallback((params: RequestChallengeSolanaRequestClient) => {
     return mutate(fetcher(endpoint, { operation, request: params }));
   }, []);
 

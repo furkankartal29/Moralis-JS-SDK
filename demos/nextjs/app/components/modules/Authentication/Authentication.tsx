@@ -55,22 +55,14 @@ const Authentication = () => {
     const { account, chain } = await connectAsync({ connector });
 
     try {
-      const challengeParams = {
-        address: account,
-        chainId: chain.id,
-        domain: 'amazing.dapp',
-        uri: 'http://localhost:3000',
-        timeout: 120,
-      };
-
-      const challenge = await requestChallengeAsync(challengeParams);
+      const challenge = await requestChallengeAsync({ address: account, chainId: chain.id });
 
       if (!challenge) {
         throw new Error('No challenge received');
       }
 
       const signature = await signMessageAsync({ message: challenge.message });
-      await signIn('credentials', { message: challenge.message, signature, redirect: false });
+      await signIn('credentials', { message: challenge.message, signature, network: 'Evm', redirect: false });
 
       // redirects to main page
       push('/');

@@ -4,11 +4,13 @@ import {
   RequestChallengeEvmResponse,
 } from '@moralisweb3/auth';
 import { fetcher } from '../../utils/fetcher';
-import { SWRConfiguration } from 'swr/dist/types';
+import { FetchParams } from '../types';
 import { useCallback } from 'react';
 import useSWR from 'swr';
 
-export const useAuthRequestChallengeEvm = (request?: RequestChallengeEvmRequest, SWRConfig?: SWRConfiguration) => {
+export type RequestChallengeEvmRequestClient = Pick<RequestChallengeEvmRequest, 'chainId' | 'address'>;
+
+export const useAuthRequestChallengeEvm = (request?: RequestChallengeEvmRequestClient, fetchParams?: FetchParams) => {
   const endpoint = 'auth/requestChallengeEvm';
 
   const { data, error, isValidating, mutate } = useSWR<RequestChallengeEvmResponse>(
@@ -17,11 +19,11 @@ export const useAuthRequestChallengeEvm = (request?: RequestChallengeEvmRequest,
     {
       revalidateOnMount: request ? true : false,
       revalidateOnFocus: false,
-      ...SWRConfig,
+      ...fetchParams,
     },
   );
 
-  const requestChallengeAsync = useCallback((params: RequestChallengeEvmRequest) => {
+  const requestChallengeAsync = useCallback((params: RequestChallengeEvmRequestClient) => {
     return mutate(fetcher(endpoint, { operation, request: params }));
   }, []);
 
