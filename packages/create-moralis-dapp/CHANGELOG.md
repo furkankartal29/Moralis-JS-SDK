@@ -1,5 +1,7 @@
 # create-moralis-dapp
 
+## 2.9.1
+
 ## 2.9.0
 
 ### Patch Changes

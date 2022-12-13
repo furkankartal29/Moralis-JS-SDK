@@ -1,5 +1,11 @@
 # @moralisweb3/core
 
+## 2.9.1
+
+### Patch Changes
+
+- [#896](https://github.com/MoralisWeb3/Moralis-JS-SDK/pull/896) [`439d6e564`](https://github.com/MoralisWeb3/Moralis-JS-SDK/commit/439d6e56487cfc6e559f91f06039a5f2567125e5) Thanks [@b4rtaz](https://github.com/b4rtaz)! - Added the `maxRetries` parameter to the Core config.
+
 ## 2.9.0
 
 ### Patch Changes
