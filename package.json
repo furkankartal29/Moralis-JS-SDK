@@ -2,7 +2,9 @@
   "name": "moralis-monorepo",
   "version": "0.0.0-monorepo",
   "description": "Moralis SDK",
-  "main": "index.js",
+   "scripts": {
+            "start": "node index.js"
+          }
   "author": "Moralis",
   "license": "MIT",
   "private": true,
